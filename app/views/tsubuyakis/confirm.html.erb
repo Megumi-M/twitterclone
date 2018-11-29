@@ -1,0 +1,16 @@
+<h3>投稿しますか？？</h3>
+
+<%= form_with(model:@tsubuyaki, url:tsubuyakis_path, local:true) do |f| %>
+  <%= f.hidden_field :content %>
+
+  <p>:<%= @tsubuyaki.content %></p>
+  <%= f.submit  "投稿する" %>
+<% end %>
+
+<br>
+
+<%= form_with(model:@tsubuyaki, url:new_tsubuyaki_path, local:true, method: 'get') do |f| %>
+  <%= f.hidden_field :content %>
+
+  <%= f.submit  "戻る",name:'back' %>
+<% end %>

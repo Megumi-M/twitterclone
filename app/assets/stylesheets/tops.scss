@@ -1,0 +1,27 @@
+header {
+  width: 100%;
+  background-color: blue;
+  color: white;
+  height: 54px;
+  margin-bottom: 20px;
+}
+
+footer {
+  width: 100%;
+  background-color:#00AAFF;
+  padding: 20px 0 10px 0;
+  color: white;
+  margin: auto;
+  padding-bottom: 10px;
+  font-size: 12px;
+  position: absolute;
+}
+
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+body {
+  text-align: center;
+}

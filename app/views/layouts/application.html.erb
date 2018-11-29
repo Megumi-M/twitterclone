@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Tsubuyakiapp</title>
+    <%= csrf_meta_tags %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header>
+    <h1>ついったあ～</h1>
+    </header>
+    
+    <%= yield %>
+    
+  <footer>
+    <p>運営会社DIVE INTO CODE株式会社</p>
+  </footer>
+  
+  </body>
+</html>

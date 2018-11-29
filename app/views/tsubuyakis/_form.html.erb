@@ -1,0 +1,19 @@
+<%= form_with(model: tsubuyaki, local: true, url: choose_new_or_edit) do |f| %>
+<% if tsubuyaki.errors.any? %>
+    <div id="error_explanation">
+      <ul>
+        <% tsubuyaki.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+
+<div class = "content">
+<%= f.text_area:content %>
+</div>
+
+<%= f.submit "投稿する" %>
+
+<% end %>
