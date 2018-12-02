@@ -1,2 +1,16 @@
-<img src="/tsubuyakiapp/app/assets/images/TOP.png" class="image_area">
-<h1>トップページ</h1>
+<div class = "container">
+  <div class = "row">
+    <p class ="col-xs-12 col-md-6">
+    <%= image_tag "/assets/TOP_img.png",width: "60%" %>
+    </p>
+    <div class = "col-xs-12 col-md-6">
+      <h1>はじめよう</h1>
+      <ul>
+        <li class = "intro">なんでもすきなことをつぶやけるよ</li>
+        <li class = "intro">つぶやくボタンから早速はじめてみよう</li>
+      </ul>
+      <br>
+      <%= link_to 'つぶやく', new_tsubuyaki_path,class:"label label-success" %>
+    </div>
+  </div>
+</div>
