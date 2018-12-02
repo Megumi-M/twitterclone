@@ -1,22 +1,17 @@
 <p><%= notice %></p>
-
-<div class="label label-success">
-<%= link_to 'つぶやく', new_tsubuyaki_path %>
-</div>
-
-<h1>つぶやき一覧</h1>
+<div class = "container">
+<p class= "top">つぶやき一覧
+  <%= link_to 'つぶやく', new_tsubuyaki_path,class:"label label-success" %>
+</p>
 
 <% @tsubuyakis.each do |tsubuyaki| %>
-  <div>
-    
- <tr>
-    
-    <th><%= tsubuyaki.content %></th>
+<p><%= tsubuyaki.content %></p>  
 
-    <td><%= link_to '詳細を確認する', tsubuyaki_path(tsubuyaki.id) %></td>
-    <td><%= link_to "編集する", edit_tsubuyaki_path(tsubuyaki.id) %></td>
-    <td><%= link_to '削除する', tsubuyaki_path(tsubuyaki.id), method: :delete, data: { confirm: '本当に削除していいですか？' }  %></td>
-  </tr>
-  
+<%= link_to '詳細を確認する', tsubuyaki_path(tsubuyaki.id),class: 'btn btn-default' %>
+<%= link_to "編集する", edit_tsubuyaki_path(tsubuyaki.id),class: 'btn btn-default' %>
+<%= link_to '削除する', tsubuyaki_path(tsubuyaki.id), class: 'btn btn-info',method: :delete, data: { confirm: '本当に削除していいですか？' }  %>
+</div>
+
+
 <% end %>
 

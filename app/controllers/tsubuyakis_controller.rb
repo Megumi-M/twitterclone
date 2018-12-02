@@ -1,6 +1,10 @@
 class TsubuyakisController < ApplicationController
   before_action :set_tsubuyaki, only: [:show, :edit, :update, :destroy]
   
+  def top
+  end
+  
+  
   def index
     @tsubuyakis = Tsubuyaki.all
   end
