@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,IAAI;EACA,SAAS,EAAE,IAAI;;AAGnB,cAAc;EACV,SAAS,EAAE,IAAI;;AAGnB,QAAQ;EACJ,KAAK,EAAE,GAAG;EACV,MAAM,EAAC,KAAK;;AAGhB,UAAU;EACN,gBAAgB,EAAC,OAAO",
+"sources": ["tsubuyakis.scss"],
+"names": [],
+"file": "tsubuyakis.css"
+}
