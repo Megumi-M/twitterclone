@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  resources :sessions, only: [:new, :create, :destroy]
+
   resources :tsubuyakis do
     collection do
       post :confirm
@@ -6,4 +8,6 @@ Rails.application.routes.draw do
     end
   end
   root to: 'tsubuyakis#top'
+  resources :users, only: [:new, :create, :show]
+
 end

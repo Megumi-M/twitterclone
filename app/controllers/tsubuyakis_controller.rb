@@ -1,5 +1,7 @@
 class TsubuyakisController < ApplicationController
   before_action :set_tsubuyaki, only: [:show, :edit, :update, :destroy]
+  before_action :check_user, only: [:new, :edit, :show, :destroy]
+  
   
   def top
   end
@@ -20,7 +22,7 @@ class TsubuyakisController < ApplicationController
   def create
     @tsubuyaki = Tsubuyaki.new(tsubuyaki_params)
       if @tsubuyaki.save
-        redirect_to tsubuyakis_path, notice: "投稿完了！"
+        redirect_to tsubuyakis_path
       else
         render "new"
       end
@@ -63,6 +65,17 @@ class TsubuyakisController < ApplicationController
   @tsubuyaki = Tsubuyaki.find(params[:id])
   end
   
+  def check_user
+    unless logged_in?
+      redirect_to new_session_path
+    end
+  end
+  
+  
+  
+  
+  
 end
+
 
 
