@@ -3,6 +3,14 @@
 <div class = "content">
 <%= f.text_area:content, readonly:true %>
 </div>
+
+<% unless @tsubuyaki.user_id == current_user.id %>
+  <% if @favorite.present? %>
+    <%= link_to 'お気に入り解除する', favorite_path(id: @favorite.id), method: :delete, class: 'btn btn-danger' %>
+  <% else %>
+    <%= link_to 'お気に入りする', favorites_path(tsubuyaki_id: @tsubuyaki.id), method: :post, class: 'btn btn-primary' %>
+  <% end %>
+<% end %>
  <%= link_to '一覧に戻る', tsubuyakis_path %>
  
 <% end %>

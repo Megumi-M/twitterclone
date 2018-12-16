@@ -2,7 +2,6 @@ class TsubuyakisController < ApplicationController
   before_action :set_tsubuyaki, only: [:show, :edit, :update, :destroy]
   before_action :check_user, only: [:new, :edit, :show, :destroy]
   
-  
   def top
   end
   
@@ -21,6 +20,7 @@ class TsubuyakisController < ApplicationController
   
   def create
     @tsubuyaki = Tsubuyaki.new(tsubuyaki_params)
+    @tsubuyaki.user_id = current_user.id 
       if @tsubuyaki.save
         redirect_to tsubuyakis_path
       else
@@ -30,12 +30,14 @@ class TsubuyakisController < ApplicationController
   
   def confirm
     @tsubuyaki = Tsubuyaki.new(tsubuyaki_params)
+    @tsubuyaki.user_id = current_user.id 
       if @tsubuyaki.invalid? 
         render 'new'
       end
   end
   
   def show
+    @favorite = current_user.favorites.find_by(tsubuyaki_id: @tsubuyaki.id)
   end
   
   def edit
@@ -49,7 +51,6 @@ class TsubuyakisController < ApplicationController
     end
   end
    
-    
   def destroy
     @tsubuyaki.destroy
       redirect_to tsubuyakis_path, notice:"削除しました！"
@@ -70,11 +71,7 @@ class TsubuyakisController < ApplicationController
       redirect_to new_session_path
     end
   end
-  
-  
-  
-  
-  
+
 end
 
 

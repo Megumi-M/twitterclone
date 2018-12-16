@@ -9,5 +9,6 @@ Rails.application.routes.draw do
   end
   root to: 'tsubuyakis#top'
   resources :users, only: [:new, :create, :show]
+  resources :favorites, only: [:create, :destroy]
 
 end

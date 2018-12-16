@@ -4,4 +4,7 @@ class User < ApplicationRecord
   before_validation { email.downcase! }
   has_secure_password
   validates :password, presence: true, length: { minimum: 8 }
+  has_many :tsubuyakis
+  has_many :favorites, dependent: :destroy
+  has_many :favorite_tsubuyakis, through: :favorites, source: :tsubuyaki
 end
