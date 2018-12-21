@@ -22,7 +22,7 @@ class TsubuyakisController < ApplicationController
     @tsubuyaki = Tsubuyaki.new(tsubuyaki_params)
     @tsubuyaki.user_id = current_user.id 
       if @tsubuyaki.save
-        redirect_to tsubuyakis_path
+        redirect_to tsubuyakis_path, notice:"投稿しました！"
       else
         render "new"
       end
