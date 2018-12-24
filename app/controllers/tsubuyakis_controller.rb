@@ -23,6 +23,7 @@ class TsubuyakisController < ApplicationController
     @tsubuyaki.user_id = current_user.id 
       if @tsubuyaki.save
         redirect_to tsubuyakis_path, notice:"投稿しました！"
+        TsubuyakiMailer.tsubuyaki_mail(@tsubuyaki).deliver
       else
         render "new"
       end
@@ -44,7 +45,7 @@ class TsubuyakisController < ApplicationController
   end
   
   def update
-    if @tsubuyaki.update(tsubuyaki_params)
+    if @tsubuyaki.update(tsubuyaki_paraあms)
       redirect_to tsubuyakis_path
     else
       render 'edit'
