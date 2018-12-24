@@ -1,13 +1,19 @@
 <h1><%= @user.name %>のページ</h1>
 <%= link_to 'つぶやく', new_tsubuyaki_path,class:"label label-success" %>
+<%= link_to '一覧に戻る', tsubuyakis_path %>
+<%= link_to "お問い合わせ", new_contact_path %>
+  
+<br>
+<br>
 
 <p>メールアドレス: <%= @user.email %></p>
 
-<p>お気に入り一覧</p>
 <% @favorites_tsubuyakis.each do |favorite| %>
+<h4>お気に入り一覧</h4>
 <ul>
 　<li>投稿者：<%= favorite.user.name %></li>
   <li>投稿：<%= favorite.content %></li>
 </ul>
+
 <% end %>
 
