@@ -22,7 +22,7 @@ class TsubuyakisController < ApplicationController
     @tsubuyaki = Tsubuyaki.new(tsubuyaki_params)
     @tsubuyaki.user_id = current_user.id 
       if @tsubuyaki.save
-        redirect_to tsubuyakis_path, notice:"投稿しました！"
+        redirect_to tsubuyaki_path(@tsubuyaki.id), notice:"投稿しました！"
         TsubuyakiMailer.tsubuyaki_mail(@tsubuyaki).deliver
       else
         render "new"
@@ -45,7 +45,7 @@ class TsubuyakisController < ApplicationController
   end
   
   def update
-    if @tsubuyaki.update(tsubuyaki_paraあms)
+    if @tsubuyaki.update(tsubuyaki_params)
       redirect_to tsubuyakis_path
     else
       render 'edit'
@@ -60,7 +60,7 @@ class TsubuyakisController < ApplicationController
   private
   
   def tsubuyaki_params
-  params.require(:tsubuyaki).permit(:content)
+  params.require(:tsubuyaki).permit(:content, :image, :image_cache)
   end
     
   def set_tsubuyaki

@@ -1,3 +1,4 @@
+<div class = "container">
 <h1>新規アカウント登録</h1>
 
 <% if @user.errors.any? %>
@@ -12,6 +13,13 @@
 <% end %>
 
 <%= form_with(model: @user, local: true) do |f| %>  
+<div class = "row">
+    <div class = "col-xs-12 col-md-2">
+    <%=f.label :image,"ユーザー画像" %>
+  　<%= f.file_field :image %>
+  </div>
+
+　　<div class = "col-xs-12 col-md-10">
   <%= f.label :name %>
   <%= f.text_field :name %>
 
@@ -23,6 +31,10 @@
 
   <%= f.label :password_confirmation %>
   <%= f.password_field :password_confirmation %>
-
+  
+  <br>
+  <br>
   <%= f.submit "Create my account" %>
+  </div>
 <% end %>
+

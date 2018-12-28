@@ -2,6 +2,8 @@
 
 <%= form_with(model:@tsubuyaki, url:tsubuyakis_path, local:true) do |f| %>
   <%= f.hidden_field :content %>
+  <%= image_tag(@tsubuyaki.image.url) if @tsubuyaki.image.url %>
+  <%= f.hidden_field :image_cache %>
 
   <p>:<%= @tsubuyaki.content %></p>
   <%= f.submit  "投稿する" %>

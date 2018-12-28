@@ -8,4 +8,5 @@ class User < ApplicationRecord
   has_many :favorites, dependent: :destroy
   has_many :favorite_tsubuyakis, through: :favorites, source: :tsubuyaki
   has_many :contacts
+  mount_uploader :image, ImageUploader
 end

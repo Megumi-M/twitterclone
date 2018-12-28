@@ -3,6 +3,9 @@
 <div class = "content">
 <%= f.text_area:content, readonly:true %>
 </div>
+<%= image_tag(@tsubuyaki.image.url) if @tsubuyaki.image.url %>
+<% end %>
+
 
 <% unless @tsubuyaki.user_id == current_user.id %>
   <% if @favorite.present? %>
@@ -13,4 +16,4 @@
 <% end %>
  <%= link_to '一覧に戻る', tsubuyakis_path %>
  
-<% end %>
+

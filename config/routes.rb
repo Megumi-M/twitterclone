@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :feeds
   resources :contacts
   resources :sessions, only: [:new, :create, :destroy]
 
@@ -9,7 +10,7 @@ Rails.application.routes.draw do
     end
   end
   root to: 'tsubuyakis#top'
-  resources :users, only: [:new, :create, :show]
+  resources :users ,only: [:new, :create, :show]
   resources :favorites, only: [:create, :destroy]
   
   mount LetterOpenerWeb::Engine, at: "/letter_opener" if Rails.env.development?
