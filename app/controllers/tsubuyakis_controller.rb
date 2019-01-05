@@ -5,7 +5,6 @@ class TsubuyakisController < ApplicationController
   def top
   end
   
-  
   def index
     @tsubuyakis = Tsubuyaki.all
   end
@@ -23,7 +22,7 @@ class TsubuyakisController < ApplicationController
     @tsubuyaki.user_id = current_user.id 
       if @tsubuyaki.save
         redirect_to tsubuyaki_path(@tsubuyaki.id), notice:"投稿しました！"
-        TsubuyakiMailer.tsubuyaki_mail(@tsubuyaki).deliver
+        #TsubuyakiMailer.tsubuyaki_mail(@tsubuyaki).deliver
       else
         render "new"
       end

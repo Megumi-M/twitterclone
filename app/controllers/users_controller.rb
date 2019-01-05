@@ -16,8 +16,6 @@ class UsersController < ApplicationController
      @favorites_tsubuyakis = @user.favorite_tsubuyakis
   end
   
- 
-  
   private
   
     def user_params
